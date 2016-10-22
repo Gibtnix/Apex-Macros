@@ -60,11 +60,11 @@ the keyboard is not possible, hence always use the sudo prefix.
 # Supported Devices
 
 Currently the Apex 350 and Apex 300 as well as the respective previous version Apex and Apex [RAW]
-are supported (or at least they should be - I could not test them all, so fell free to give me
+are supported (or at least they should be - I could not test them all, so feel free to give me
 some feedback if they do or not do). The Apex M800 will most likely not work in this version, but
 it might be possible to extend Apex-Macros to work with the Apex M800 - I have no one available,
 hence I could not test it. However there is a slight source code extension needed, but I do not
-know the respective product ID. Fell free to use the issue functionality (cf. top part) if you are
+know the respective product ID. Feel free to use the issue functionality (cf. top part) if you are
 equipped with an Apex M800 and are interested in testing it.
 
 
@@ -110,7 +110,7 @@ XBindKeys uses a configuration file .xbindkeysrc, located in your home directory
 be modified using a text editor or using xbindkeys-config; both methods are supporting the Apex
 macro keys as soon as they have been activated using 'apex-macros enable'. For further information
 about the configuration options of XBindKeys please refer to XBindKeys tutorials or documentations.
-However if you have any problems or questions, fell free to use the 'Issue' option
+However if you have any problems or questions, feel free to use the 'Issue' option
 
 
 # AUTOSTART
