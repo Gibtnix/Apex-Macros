@@ -74,15 +74,11 @@ First of all: If the program is not executed as root, it will behave as if there
 compatible keyboard connected to the system! Hence if it does not work, make sure you to execute
 it as root. The main usability is quite simple, to enable the macro keys just run
 
-    ```
     sudo apex-macros enable
-    ```
 
 or to disable them, run:
 
-    ```
     sudo apex-macros disable
-    ```
 
 
 # Adding custom actions to the macro keys
@@ -91,9 +87,7 @@ The macro keys should be detected by the system if 'sudo apex-macros enable' has
 executed. To verify this it, open a terminal and run (assuming xev is installed on your system
 which at least should hold for all ubuntu-based distributions):
 
-    ```
     xev
-    ```
 
 The terminal should notify about key press events as soon as the macro keys are pressed. Further,
 some keys are bind to predefined multimedia actions, they should already be usable in your media
@@ -106,15 +100,11 @@ instance XBindKeys is quite popular and optionally also offers a graphical user 
 Apex-Macros' task is just to enable the respective key press events, but not to define individual
 actions for these keys. To install XBindKeys on your system, run:
 
-    ```
     sudo apt-get install -y xbindkeys
-    ```
 
 Additionally you may want to use the graphical user interface, which can be installed by
 
-    ```
     sudo apt-get install -y xbindkeys-config
-    ```
 
 XBindKeys uses a configuration file .xbindkeysrc, located in your home directory, that can either
 be modified using a text editor or using xbindkeys-config; both methods are supporting the Apex
@@ -131,22 +121,16 @@ useful to automatically activate the macro keys as soon as a compatible keyboard
 the computer. To do this, there is an additional script called 'autostart.sh' that can do this for
 you. This script creates a file
 
-    ```
     /etc/udev/rules.d/99-apex-macros.rules
-    ```
 
 that informs the udev service to call Apex-macros as soon as a compatible keyboard is connected to
 the computer. To create this file simply run:
 
-    ```
     ./autostart.sh
-    ```
 
 Finally the autostart can be disabled by running
 
-    ```
     ./autostart.sh --disable
-    ```
 
 which will disable the autostart by removing the rule file.
 
@@ -156,6 +140,5 @@ which will disable the autostart by removing the rule file.
 Apex-Macros also comes with an uninstallation script uninstall.sh which will remove the program
 /usr/local/bin/apex-macros as well as running ./autostart --disable, i.e. it disables the
 autostart. If you want to use it, simply run:
-    ```
+
     ./uninstall.sh
-    ```
