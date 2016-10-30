@@ -36,7 +36,7 @@ delete: clean
 	-$(DEL_FILE) $(TARGET)
 
 install:
-	@cp -v $(TARGET) $(INSTALLPREFIX)/$(TARGET)
+	@mv -v $(TARGET) $(INSTALLPREFIX)/$(TARGET)
 	@chmod 755 $(INSTALLPREFIX)/$(TARGET)
 
 ####### Compile
