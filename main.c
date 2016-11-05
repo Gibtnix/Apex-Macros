@@ -10,7 +10,7 @@
 
 /**
  * @brief tries to open the first compatible Apex keyboard
- * @return a pointer to the respective hid_device or NULL if not keyboard was found
+ * @return a pointer to the respective hid_device or NULL if no keyboard was found
  */
 hid_device* find_keyboard()
 {
@@ -27,7 +27,6 @@ hid_device* find_keyboard()
         for (int i=0; i<4 && dev == NULL; ++i)
             dev = hid_open(0x1038, ids[i], 0);
     }
-
     return dev;
 }
 
@@ -42,32 +41,28 @@ int main(int argc, char** argv)
     int ret;
     if (argc == 2)
     {
-        ret = 0;
-        hid_device* dev = find_keyboard();
+        unsigned char flag;
+        if (strcmp(argv[1], "enable") == 0)
+            flag = 2;
+        else if (strcmp(argv[1], "disable") == 0)
+            flag = 1;
+        else
+            flag = 0;
 
-        if (dev != NULL)
+        ret = flag > 0 ? 0 : -1;
+
+        if (ret == 0)
         {
-            if (strcmp(argv[1], "enable")==0)
+            hid_device* dev = find_keyboard();
+            if (dev != NULL)
             {
-                unsigned char buffer[3] = { 2, 0, 2 };
-                if (!hid_send_feature_report(dev, buffer, 3))
+                unsigned char buffer[3] = { 2, 0, flag };
+                if (hid_send_feature_report(dev, buffer, 3) <= 0)
                     ret = 1;
+                hid_close(dev);
             }
-            else if (strcmp(argv[1], "disable")==0)
-            {
-                unsigned char buffer[3] = { 2, 0, 1 };
-                ret = hid_send_feature_report(dev, buffer, 3);
-                if (!hid_send_feature_report(dev, buffer, 3))
-                    ret = 1;
-            }
-            else
-            {
-                ret = -1;
-            }
-            hid_close(dev);
+            hid_exit();
         }
-
-        hid_exit();
     }
     else
     {
