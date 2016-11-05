@@ -34,7 +34,7 @@ hid_device* find_keyboard()
  * @brief application's entry point
  * @param argc number of command line arguments
  * @param argv command line argument array; the first value is always the program's name
- * @return 0 if everything succeeded, -1 otherwise for invalid arguments, 1 if the device was found but the command could not be sent
+ * @return 0 if everything succeeded, -1 otherwise for invalid arguments, 1 if the device was found but there were communication problems
  */
 int main(int argc, char** argv)
 {
@@ -61,7 +61,8 @@ int main(int argc, char** argv)
                     ret = 1;
                 hid_close(dev);
             }
-            hid_exit();
+            if (hid_exit() != 0)
+                ret = 1;
         }
     }
     else
