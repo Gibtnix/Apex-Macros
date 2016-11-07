@@ -56,7 +56,8 @@ int main(int argc, char** argv)
             hid_device* dev = find_keyboard();
             if (dev != NULL)
             {
-                unsigned char buffer[3] = { 2, 0, flag };
+                unsigned char buffer[3] = { 2, 0, 0 };
+                buffer[2] = flag;
                 if (hid_send_feature_report(dev, buffer, 3) <= 0)
                     ret = 1;
                 hid_close(dev);
