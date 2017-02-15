@@ -1,6 +1,6 @@
 # GENERAL
 
-The Apex-Macros is a minimalistic tool to enable (or disable) the additonal macro keys of the
+Apex-Macros is a minimalistic tool to enable (or disable) the additonal macro keys of the
 SteelSeries Apex keyboard family. There is no further configuration option available, e.g. color
 configurations or polling frequencies cannot be changed. Actually there exist respective Linux
 tools, for instance this one: https://github.com/tuxmark5/ApexCtl
