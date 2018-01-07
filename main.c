@@ -38,8 +38,9 @@ hid_device* find_keyboard()
  */
 int main(int argc, char** argv)
 {
-    int ret;
-    if (argc == 2)
+    int ret = argc == 2 ? 0 : -1;
+
+    if (ret == 0)
     {
         unsigned char flag;
         if (strcmp(argv[1], "enable") == 0)
@@ -65,10 +66,6 @@ int main(int argc, char** argv)
             if (hid_exit() != 0)
                 ret = 1;
         }
-    }
-    else
-    {
-        ret = -1;
     }
 
     if (ret == -1)
