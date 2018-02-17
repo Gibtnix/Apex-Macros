@@ -7,6 +7,10 @@
 # the rules file
 file='/etc/udev/rules.d/99-apex.rules'
 
+# the command itself; the wait time can be adjusted if there are some issues with too quick callings
+wait=0.5
+command="/bin/sh -c 'sleep $wait; /usr/local/bin/apex-macros enable'"
+
 if [ $# -eq 0 ]; then
     # activate the autostart
 
@@ -20,10 +24,9 @@ if [ $# -eq 0 ]; then
     sleep 1
 
     sudo sh -c "echo \"# run Apex-Macros to enable the keyboard's macro keys\" > $file"
-    sudo sh -c "echo 'ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"1206\", RUN+=\"/usr/local/bin/apex-macros enable\"' >> $file"
-    sudo sh -c "echo 'ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"1208\", RUN+=\"/usr/local/bin/apex-macros enable\"' >> $file"
-    sudo sh -c "echo 'ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"1200\", RUN+=\"/usr/local/bin/apex-macros enable\"' >> $file"
-    sudo sh -c "echo 'ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"1202\", RUN+=\"/usr/local/bin/apex-macros enable\"' >> $file"
+    for idP in 1206 1208 1200 1202; do
+        echo "ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"$idP\", RUN+=\"$command\"" | sudo tee -a $file > /dev/null
+    done
 
     sudo chmod 755 $file
 

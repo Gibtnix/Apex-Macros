@@ -42,13 +42,11 @@ int main(int argc, char** argv)
 
     if (ret == 0)
     {
-        unsigned char flag;
+        unsigned char flag = 0;
         if (strcmp(argv[1], "enable") == 0)
             flag = 2;
         else if (strcmp(argv[1], "disable") == 0)
             flag = 1;
-        else
-            flag = 0;
 
         ret = flag > 0 ? 0 : -1;
 
