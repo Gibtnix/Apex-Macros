@@ -28,7 +28,7 @@ if [ $# -eq 0 ]; then
         echo "ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"$idP\", RUN+=\"$command\"" | sudo tee -a $file > /dev/null
     done
 
-    sudo chmod 755 $file
+    sudo chmod 644 $file
 
     echo "Autostart rules file '$file' created"
 elif [ $1 = "--disable" ]; then
