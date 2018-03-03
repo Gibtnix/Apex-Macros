@@ -100,11 +100,11 @@ instance XBindKeys is quite popular and optionally also offers a graphical user 
 Apex-Macros' task is just to enable the respective key press events, but not to define individual
 actions for these keys. To install XBindKeys on your system, run:
 
-    sudo apt-get install -y xbindkeys
+    sudo apt install -y xbindkeys
 
 Additionally you may want to use the graphical user interface, which can be installed by
 
-    sudo apt-get install -y xbindkeys-config
+    sudo apt install -y xbindkeys-config
 
 XBindKeys uses a configuration file .xbindkeysrc, located in your home directory, that can either
 be modified using a text editor or using xbindkeys-config; both methods are supporting the Apex
