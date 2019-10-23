@@ -1,6 +1,6 @@
 # GENERAL
 
-Apex-Macros is a minimalistic tool to enable (or disable) the additonal macro keys of the
+Apex-Macros is a minimalistic tool to enable (or disable) the additional macro keys of the
 SteelSeries Apex keyboard family. There is no further configuration option available, e.g. color
 configurations or polling frequencies cannot be changed. Actually there exist respective Linux
 tools, for instance this one: https://github.com/tuxmark5/ApexCtl
@@ -59,13 +59,9 @@ the keyboard is not possible, hence always use the sudo prefix.
 
 # Supported Devices
 
-Currently the Apex 350 and Apex 300 as well as the respective previous version Apex and Apex [RAW]
-are supported (or at least they should be - I could not test them all, so feel free to give me
-some feedback if they do or not do). The Apex M800 will most likely not work in this version, but
-it might be possible to extend Apex-Macros to work with the Apex M800 - I have no one available,
-hence I could not test it. However there is a slight source code extension needed, but I do not
-know the respective product ID. Feel free to use the issue functionality (cf. top part) if you are
-equipped with an Apex M800 and are interested in testing it.
+Currently the Apex M800, Apex 350 and Apex 300 as well as the respective previous version Apex and
+Apex [RAW] are supported (or at least they should be - I could not test them all, so feel free to
+give me some feedback if they do or not do).
 
 
 # USABILITY
@@ -123,7 +119,7 @@ you. This script creates a file
 
     /etc/udev/rules.d/99-apex-macros.rules
 
-that informs the udev service to call Apex-macros as soon as a compatible keyboard is connected to
+that informs the udev service to call Apex-Macros as soon as a compatible keyboard is connected to
 the computer. To create this file simply run:
 
     ./autostart.sh
