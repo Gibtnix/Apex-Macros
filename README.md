@@ -1,4 +1,4 @@
-# GENERAL
+# General
 
 Apex-Macros is a minimalistic tool to enable (or disable) the additional macro keys of the
 SteelSeries Apex keyboard family. There is no further configuration option available, e.g. color
@@ -10,7 +10,7 @@ Apex-Macros is more functional and does not aim at all possible, but actually ma
 configuration options. Consequently there is just a minimum number of additional dependencies.
 
 
-# INSTALLATION & REQUIREMENTS
+# Installation & Requirements
 
 I tried to keep the external dependencies to a minimum level, however there are some unavoidable
 ones. These are:
@@ -64,7 +64,7 @@ Apex [RAW] are supported (or at least they should be - I could not test them all
 give me some feedback if they do or not do).
 
 
-# USABILITY
+# Usability
 
 First of all: If the program is not executed as root, it will behave as if there currently is no
 compatible keyboard connected to the system! Hence if it does not work, make sure you to execute
@@ -77,7 +77,7 @@ or to disable them, run:
     sudo apex-macros disable
 
 
-# Adding custom actions to the macro keys
+# Macro Keys Configuration
 
 The macro keys should be detected by the system if 'sudo apex-macros enable' has been successfully
 executed. To verify this it, open a terminal and run (assuming xev is installed on your system
@@ -109,7 +109,7 @@ about the configuration options of XBindKeys please refer to XBindKeys tutorials
 However if you have any problems or questions, feel free to use the 'Issue' option.
 
 
-# AUTOSTART
+# Autostart
 
 An useful additional feature is the optional autostart functionality since the macro keys will be
 disabled again as soon as restart your computer or put it into standby mode. Hence it is quite
@@ -131,7 +131,7 @@ Finally the autostart can be disabled by running
 which will disable the autostart by removing the rule file.
 
 
-# UNINSTALLATION
+# Uninstallation
 
 Apex-Macros also comes with an uninstallation script uninstall.sh which will remove the program
 /usr/local/bin/apex-macros as well as running ./autostart --disable, i.e. it disables the
