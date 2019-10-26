@@ -117,7 +117,7 @@ useful to automatically activate the macro keys as soon as a compatible keyboard
 the computer. To do this, there is an additional script called 'autostart.sh' that can do this for
 you. This script creates a file
 
-    /etc/udev/rules.d/99-apex-macros.rules
+    /etc/udev/rules.d/90-apex-macros.rules
 
 that informs the udev service to call Apex-Macros as soon as a compatible keyboard is connected to
 the computer. To create this file simply run:

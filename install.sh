@@ -22,7 +22,7 @@ else
     exit 1
 fi
 
-echo "Compiling 'apex-macros'..."
+echo "Compiling Apex-Macros..."
 sleep 2
 
 # compile
@@ -37,21 +37,26 @@ fi
 
 # install 'apex-macros' to '/usr/local/bin/apex-macros' which also makes it callable via the apex-macros command
 if (sudo make install); then
-    echo "Installation of 'apex-macros' finished successfully"
+    echo "Installation of Apex-Macros finished successfully"
     sleep 2
 else
-    echo "Installation of 'apex-macros' failed"
+    echo "Installation of Apex-Macros failed"
     exit 1
 fi;
 
-echo "Testing 'apex-macros'..."
+echo "Testing Apex-Macros..."
 sleep 1
 
 if (sudo apex-macros enable); then
+    #configure macro keys
+    sudo cp '90-apex.hwdb' '/etc/udev/hwdb.d/90-apex.hwdb'
+    sudo udevadm hwdb --update
+    sudo udevadm control --reload
+
     echo "The macro keys were successfully enabled."
     echo "To manually enable / disable the macro keys, run 'apex-marcros enable' or 'apex-marcros disable', respectively."
     echo "If you want to enable the autostart, run 'autostart.sh', to uninstall 'apex-marcros' run 'uninstall.sh'."
-    echo "Thank you for using 'apex-macros' and have fun with it! :-)"
+    echo "Thank you for using Apex-Macros and have fun with it! :-)"
 else
-    echo "Testing of 'apex-macros' failed"
+    echo "Testing of Apex-Macros failed"
 fi

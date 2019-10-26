@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # to enable the autostart, execute this script with
-# this script will create a file '/etc/udev/rules.d/99-apex.rules' to enable the keyboard's macro keys at startup or wakeup
+# this script will create a file '/etc/udev/rules.d/90-apex.rules' to enable the keyboard's macro keys at startup or wakeup
 # further, this script can also undo this by calling it with the '--disable' argument
 
 # the rules file
-file='/etc/udev/rules.d/99-apex.rules'
+file='/etc/udev/rules.d/90-apex.rules'
 
 # the command itself; the wait time can be adjusted if there are some issues with too quick callings
 wait=0.5
