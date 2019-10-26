@@ -87,14 +87,14 @@ which at least should hold for all ubuntu-based distributions):
 
 The terminal should notify about key press events as soon as the macro keys are pressed. Further,
 some keys are bind to predefined multimedia actions, they should already be usable in your media
-player (VLC for instance). There are some other keys that unluckily are mapped to the same key
-code. Hence, it is only possible to assign an action to all of them, but not a different action
-for each one.
+player (VLC for instance). There might be some other keys that are mapped to the same key code.
+Hence, it is only possible to assign an action to all of them, but not a different action for
+each one. This can only be changed by modifying the '90-apex.hwdb' file accordingly.
 
-To define these respective custom commands to the macro keys, please use an additional tool, for
-instance XBindKeys is quite popular and optionally also offers a graphical user interface to do so.
-Apex-Macros' task is just to enable the respective key press events, but not to define individual
-actions for these keys. To install XBindKeys on your system, run:
+To map custom commands to the macro keys, please use an additional tool, for instance XBindKeys is
+quite popular and optionally also offers a graphical user interface to do so. Apex-Macros' task is
+just to enable the respective key press events, but not to define individual actions for them. To
+install XBindKeys on a Debian-based system (e.g. any ubuntu-based one), run:
 
     sudo apt install -y xbindkeys
 
@@ -106,7 +106,7 @@ XBindKeys uses a configuration file .xbindkeysrc, located in your home directory
 be modified using a text editor or using xbindkeys-config; both methods are supporting the Apex
 macro keys as soon as they have been activated using 'apex-macros enable'. For further information
 about the configuration options of XBindKeys please refer to XBindKeys tutorials or documentations.
-However if you have any problems or questions, feel free to use the 'Issue' option
+However if you have any problems or questions, feel free to use the 'Issue' option.
 
 
 # AUTOSTART
