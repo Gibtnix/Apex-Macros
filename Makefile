@@ -4,12 +4,12 @@
 
 ####### Compiler, tools and options
 
-CC            = gcc
-FLAGS         = -m64 -pipe -O3 -Wall -W -D_REENTRANT
-LINK          = gcc
-LFLAGS        = -m64 -Wl,-O3
-LIBS          = -lhidapi-libusb
-DEL_FILE      = rm -f
+CC            ?= gcc
+CFLAGS        ?= -m64 -pipe -O3 -Wall -W -D_REENTRANT
+LINK          ?= gcc
+LDFLAGS       ?= -m64 -Wl,-O3
+LDLIBS        ?= -lhidapi-libusb
+RM            ?= rm -f
 
 
 ####### Files
@@ -27,13 +27,13 @@ INSTALLPREFIX = /usr/local/bin
 all: Makefile $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
+	$(LINK) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LDLIBS)
 
 clean:
-	-$(DEL_FILE) $(OBJECTS)
+	-$(RM) $(OBJECTS)
 
 delete: clean
-	-$(DEL_FILE) $(TARGET)
+	-$(RM) $(TARGET)
 
 install:
 	@mv -v $(TARGET) $(INSTALLPREFIX)/$(TARGET)
@@ -42,4 +42,4 @@ install:
 ####### Compile
 
 main.o: main.c
-	$(CC) -c $(FLAGS) -o main.o main.c
+	$(CC) -c $(CFLAGS) -o main.o main.c
