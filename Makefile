@@ -17,12 +17,13 @@ INSTALLPREFIX ?= /usr/local/bin
 SOURCES       = main.c
 OBJECTS       = main.o
 TARGET        = apex-macros
+RULESFILE     = 90-apex.rules
 
 ####### Build rules
 
 .PHONY: clean delete install
 
-all: Makefile $(TARGET)
+all: Makefile $(TARGET) $(RULESFILE)
 
 $(TARGET): $(OBJECTS)
 	$(LINK) $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LDLIBS)
@@ -31,13 +32,16 @@ clean:
 	-$(RM) $(OBJECTS)
 
 delete: clean
-	-$(RM) $(TARGET)
+	-$(RM) $(TARGET) $(RULESFILE)
 
 install:
 	@mv -v $(TARGET) $(INSTALLPREFIX)/$(TARGET)
 	@chmod 755 $(INSTALLPREFIX)/$(TARGET)
 
 ####### Compile
+
+$(RULESFILE): gen_rules.sh
+	./gen_rules.sh
 
 main.o: main.c
 	$(CC) -c $(CFLAGS) -o main.o main.c

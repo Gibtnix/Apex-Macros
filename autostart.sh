@@ -1,32 +1,28 @@
 #!/bin/sh
 
-# to enable the autostart, execute this script with
-# this script will create a file '/etc/udev/rules.d/90-apex.rules' to enable the keyboard's macro keys at startup or wakeup
-# further, this script can also undo this by calling it with the '--disable' argument
+# To enable the autostart, execute this script after building this project.
+# It will install the 90-apex.rules file into /etc/udev/rules.d/
+# Further, this script can also undo this by calling it with the '--disable' argument
 
 # the rules file
 file='/etc/udev/rules.d/90-apex.rules'
-
-# the command itself; the wait time can be adjusted if there are some issues with too quick callings
-wait=0.5
-command="/bin/sh -c 'sleep $wait; /usr/local/bin/apex-macros enable'"
 
 if [ $# -eq 0 ]; then
     # activate the autostart
 
     # autostart requires 'apex-macros' to be installed
-    if [ ! -f '/usr/local/bin/apex-macros' ]; then
+    if [ ! -f $(which apex-macros) ]; then
         echo "Apex-Macros is not installed, hence no autostart possible"
         exit 1
+    fi
+    if [ ! -f ./90-apex.rules ]; then
+	echo "rules file not found, did you build the project first with make?"
+	exit 1
     fi
 
     echo "Activating Apex-Macros autostart..."
     sleep 1
-
-    sudo sh -c "echo \"# run Apex-Macros to enable the keyboard's macro keys\" > $file"
-    for idP in 1206 1208 1200 1202; do
-        echo "ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"$idP\", RUN+=\"$command\"" | sudo tee -a $file > /dev/null
-    done
+    sudo cp 90-apex.rules $file
 
     sudo chmod 644 $file
 
