@@ -10,15 +10,13 @@ LINK          ?= gcc
 LDFLAGS       ?= -m64 -Wl,-O3
 LDLIBS        ?= -lhidapi-libusb
 RM            ?= rm -f
-
+INSTALLPREFIX ?= /usr/local/bin
 
 ####### Files
 
 SOURCES       = main.c
 OBJECTS       = main.o
 TARGET        = apex-macros
-INSTALLPREFIX = /usr/local/bin
-
 
 ####### Build rules
 
