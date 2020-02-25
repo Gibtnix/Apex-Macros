@@ -37,6 +37,7 @@ fi
 
 # install 'apex-macros' to '/usr/local/bin/apex-macros' which also makes it callable via the apex-macros command
 if (sudo make install); then
+    make delete
     echo "Installation of Apex-Macros finished successfully"
     sleep 2
 else

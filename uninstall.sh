@@ -1,11 +1,11 @@
 #!/bin/sh
 
+# removes the program by deleting it from $INSTALLPREFIX (by default /usr/local/bin)
+
 if [ -z "$INSTALLPREFIX" ]; then
     INSTALLPREFIX="/usr/local/bin"
 fi
 
-# removes the program by deleting it from $INSTALLPREFIX (by default
-# from /usr/local/bin)
 if [ -f "$INSTALLPREFIX/apex-macros" ]; then
     sudo rm -v "$INSTALLPREFIX/apex-macros"
 
