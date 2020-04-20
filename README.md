@@ -7,7 +7,7 @@ tools, for instance this one: https://github.com/tuxmark5/ApexCtl
 My intention to create Apex-Macros just has been the fact that the macro keys are automatically
 disabled as soon as you reboot the system, in contrast to the remaining configurations. Hence,
 Apex-Macros is more functional and does not aim at all possible, but actually mainly unneeded
-configuration options. Consequently there is just a minimum number of additional dependencies.
+configuration options. Consequently, there is just a minimum number of additional dependencies.
 
 
 # Installation & Requirements
@@ -67,7 +67,7 @@ give me some feedback if they do or not do).
 # Usability
 
 First of all: If the program is not executed as root, it will behave as if there currently is no
-compatible keyboard connected to the system! Hence if it does not work, make sure you to execute
+compatible keyboard connected to the system! Hence, if it does not work, make sure you to execute
 it as root. The main usability is quite simple, to enable the macro keys just run
 
     sudo apex-macros enable
@@ -80,8 +80,8 @@ or to disable them, run:
 # Macro Keys Configuration
 
 The macro keys should be detected by the system if 'sudo apex-macros enable' has been successfully
-executed. To verify this it, open a terminal and run (assuming xev is installed on your system
-which at least should hold for all ubuntu-based distributions):
+executed. To verify this, open a terminal and run (assuming xev is installed on your system which
+at least should hold for all ubuntu-based distributions):
 
     xev
 
@@ -98,7 +98,7 @@ install XBindKeys on a Debian-based system (e.g. any ubuntu-based one), run:
 
     sudo apt install -y xbindkeys
 
-Additionally you may want to use the graphical user interface, which can be installed by
+Additionally, you may want to use the graphical user interface, which can be installed by:
 
     sudo apt install -y xbindkeys-config
 
@@ -106,13 +106,13 @@ XBindKeys uses a configuration file .xbindkeysrc, located in your home directory
 be modified using a text editor or using xbindkeys-config; both methods are supporting the Apex
 macro keys as soon as they have been activated using 'apex-macros enable'. For further information
 about the configuration options of XBindKeys please refer to XBindKeys tutorials or documentations.
-However if you have any problems or questions, feel free to use the 'Issue' option.
+However, if you have any problems or questions, feel free to report an issue.
 
 
 # Autostart
 
-An useful additional feature is the optional autostart functionality since the macro keys will be
-disabled again as soon as restart your computer or put it into standby mode. Hence it is quite
+A useful additional feature is the optional autostart functionality since the macro keys will be
+disabled again as soon as you restart your computer or put it into standby mode. Hence, it is quite
 useful to automatically activate the macro keys as soon as a compatible keyboard is connected to
 the computer. To do this, there is an additional script called 'autostart.sh' that can do this for
 you. This script creates a file
@@ -124,7 +124,7 @@ the computer. To create this file simply run:
 
     ./autostart.sh
 
-Finally the autostart can be disabled by running
+Finally, the autostart can be disabled by running
 
     ./autostart.sh --disable
 
