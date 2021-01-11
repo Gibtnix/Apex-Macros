@@ -12,6 +12,6 @@ command="/bin/sh -c 'sleep $wait; $INSTALLPREFIX/apex-macros enable'"
 file=./90-apex.rules
 
 sh -c "echo \"# run Apex-Macros to enable the keyboard's macro keys\" > $file"
-for idP in 1206 1208 1200 1202 1600; do
+for idP in 1206 120a 1208 1200 1202 1600; do
     echo "ACTION==\"add\", ATTRS{idVendor}==\"1038\", ATTRS{idProduct}==\"$idP\", RUN+=\"$command\"" >> $file
 done
