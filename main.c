@@ -17,15 +17,16 @@ hid_device* find_keyboard()
     hid_device* dev = NULL;
     if (hid_init() == 0)
     {
-        unsigned short ids[5] = {
+        unsigned short ids[6] = {
             0x1206, //Apex 350
+            0x120a, //Apex 350 (SteelSeries HP Omen)
             0x1208, //Apex 300
             0x1200, //Apex
             0x1202, //Apex [RAW]
             0x1600  //Apex M800
         };
 
-        for (int i=0; i<5 && dev == NULL; ++i)
+        for (int i=0; i<6 && dev == NULL; ++i)
             dev = hid_open(0x1038, ids[i], 0);
     }
     return dev;
