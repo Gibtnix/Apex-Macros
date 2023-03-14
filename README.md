@@ -19,7 +19,7 @@ ones. These are:
  * make    - the main build tool of the Linux world
  * LIBUSB  - to communicate with the keyboard, LIBUSB is required
 
-To install the program, there is an installation script 'install.sh' which can be run by opening
+To install the program, there is an installation script `install.sh` which can be run by opening
 the respective folder in a terminal and typing
 
     ./install.sh
@@ -79,7 +79,7 @@ or to disable them, run:
 
 # Macro Keys Configuration
 
-The macro keys should be detected by the system if 'sudo apex-macros enable' has been successfully
+The macro keys should be detected by the system if `sudo apex-macros enable` has been successfully
 executed. To verify this, open a terminal and run (assuming xev is installed on your system which
 at least should hold for all ubuntu-based distributions):
 
@@ -89,7 +89,7 @@ The terminal should notify about key press events as soon as the macro keys are 
 some keys are bind to predefined multimedia actions, they should already be usable in your media
 player (VLC for instance). There might be some other keys that are mapped to the same key code.
 Hence, it is only possible to assign an action to all of them, but not a different action for
-each one. This can only be changed by modifying the '90-apex.hwdb' file accordingly.
+each one. This can only be changed by modifying the `90-apex.hwdb` file accordingly.
 
 To map custom commands to the macro keys, please use an additional tool, for instance XBindKeys is
 quite popular and optionally also offers a graphical user interface to do so. Apex-Macros' task is
@@ -104,7 +104,7 @@ Additionally, you may want to use the graphical user interface, which can be ins
 
 XBindKeys uses a configuration file .xbindkeysrc, located in your home directory, that can either
 be modified using a text editor or using xbindkeys-config; both methods are supporting the Apex
-macro keys as soon as they have been activated using 'apex-macros enable'. For further information
+macro keys as soon as they have been activated using `apex-macros enable`. For further information
 about the configuration options of XBindKeys please refer to XBindKeys tutorials or documentations.
 However, if you have any problems or questions, feel free to report an issue.
 
@@ -114,7 +114,7 @@ However, if you have any problems or questions, feel free to report an issue.
 A useful additional feature is the optional autostart functionality since the macro keys will be
 disabled again as soon as you restart your computer or put it into standby mode. Hence, it is quite
 useful to automatically activate the macro keys as soon as a compatible keyboard is connected to
-the computer. To do this, there is an additional script called 'autostart.sh' that can do this for
+the computer. To do this, there is an additional script called `autostart.sh` that can do this for
 you. This script creates a file
 
     /etc/udev/rules.d/90-apex-macros.rules
