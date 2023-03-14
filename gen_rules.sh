@@ -6,7 +6,7 @@
 # the command itself; the wait time can be adjusted if there are some issues with too quick callings
 wait=0.5
 if [ -z "$INSTALLPREFIX" ]; then
-    INSTALLPREFIX="/usr/local/bin"
+    INSTALLPREFIX='/usr/local/bin'
 fi
 command="/bin/sh -c 'sleep $wait; $INSTALLPREFIX/apex-macros enable'"
 file=./90-apex.rules

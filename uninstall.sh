@@ -3,7 +3,7 @@
 # removes the program by deleting it from $INSTALLPREFIX (by default /usr/local/bin)
 
 if [ -z "$INSTALLPREFIX" ]; then
-    INSTALLPREFIX="/usr/local/bin"
+    INSTALLPREFIX='/usr/local/bin'
 fi
 
 if [ -f "$INSTALLPREFIX/apex-macros" ]; then
